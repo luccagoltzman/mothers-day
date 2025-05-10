@@ -46,19 +46,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Função para criar mensagem flutuante
     function createFloatingMessage() {
+        // Remover mensagem anterior se existir
+        const existingMessage = document.querySelector('.tree-message');
+        if (existingMessage) {
+            existingMessage.remove();
+        }
+
         const message = document.createElement('div');
         message.className = 'tree-message';
         message.textContent = messages[Math.floor(Math.random() * messages.length)];
         
-        // Posição horizontal aleatória com margem
+        // Posição horizontal aleatória dentro do container
+        const container = document.querySelector('.tree-container');
+        const containerRect = container.getBoundingClientRect();
         const margin = 20;
-        const maxX = window.innerWidth - 300;
+        const maxX = containerRect.width - 280; // Largura máxima da mensagem
         const x = Math.random() * (maxX - 2 * margin) + margin;
         message.style.left = `${x}px`;
-        
-        // Adicionar delay aleatório para não sobrepor mensagens
-        const delay = Math.random() * 3;
-        message.style.animationDelay = `${delay}s`;
         
         treeMessages.appendChild(message);
 
@@ -97,12 +101,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const y = e.clientY - rect.top;
             createFloatingHeart(x, y);
             
-            // Criar múltiplas mensagens com intervalos diferentes
-            for (let i = 0; i < 3; i++) {
-                setTimeout(() => {
-                    createFloatingMessage();
-                }, i * 1000);
-            }
+            // Criar apenas uma mensagem
+            createFloatingMessage();
 
             loveButton.style.transform = 'scale(1.1)';
             setTimeout(() => {
