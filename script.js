@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const loveButton = document.querySelector('.love-button');
     const loveCounter = document.querySelector('.love-counter');
     const container = document.querySelector('.container');
-    const themeToggle = document.querySelector('.theme-toggle');
     const messageInput = document.querySelector('.message-input textarea');
     const addMessageButton = document.querySelector('.add-message');
     const messageWall = document.querySelector('.message-wall');
@@ -148,14 +147,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         input.click();
     });
-
-    // Modo noturno
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('night-mode');
-            themeToggle.textContent = document.body.classList.contains('night-mode') ? '☀️' : '🌙';
-        });
-    }
 
     // Arrastar elementos
     const draggableElements = document.querySelectorAll('.draggable');
