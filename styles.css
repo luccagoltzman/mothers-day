@@ -22,6 +22,7 @@ body {
     padding: 1rem;
     text-align: center;
     position: relative;
+    z-index: 1;
 }
 
 .heart-container {
@@ -126,6 +127,8 @@ body.night-mode .heart:hover:after {
     cursor: pointer;
     max-width: 600px;
     margin: 0 auto 1.5rem;
+    position: relative;
+    z-index: 2;
 }
 
 .message-container:hover {
@@ -178,6 +181,7 @@ body.night-mode .heart:hover:after {
     top: 0;
     left: 0;
     pointer-events: none;
+    z-index: 3;
 }
 
 .flower {
@@ -213,6 +217,7 @@ body.night-mode .heart:hover:after {
     border-radius: 20px;
     padding: 1rem;
     overflow: hidden;
+    z-index: 2;
 }
 
 .tree-container {
@@ -238,7 +243,7 @@ body.night-mode .heart:hover:after {
     transition: all 0.3s ease;
     border: 2px solid #d6336c;
     backdrop-filter: blur(5px);
-    z-index: 1;
+    z-index: 4;
     transform-origin: center bottom;
 }
 
@@ -533,6 +538,8 @@ body.night-mode .message-input textarea:focus {
 .interactive-section {
     margin-top: 2rem;
     margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
 }
 
 .love-button {
@@ -565,7 +572,7 @@ body.night-mode .message-input textarea:focus {
     font-size: 12px;
     color: rgba(0, 0, 0, 0.3);
     font-family: 'Poppins', sans-serif;
-    z-index: 9999;
+    z-index: 0;
     background-color: rgba(255, 255, 255, 0.5);
     padding: 5px 10px;
     border-radius: 15px;
