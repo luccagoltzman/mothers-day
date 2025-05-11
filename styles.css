@@ -556,4 +556,14 @@ body.night-mode .message-input textarea:focus {
     margin-top: 1rem;
     font-size: 1.1rem;
     color: #666;
+}
+
+.signature {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.3);
+    font-family: 'Poppins', sans-serif;
+    z-index: 1000;
 } 
